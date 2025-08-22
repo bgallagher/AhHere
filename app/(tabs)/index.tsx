@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import { MaterialButton } from '@/components/MaterialButton';
@@ -22,25 +22,28 @@ export default function HomeScreen() {
         {/* Hero Section */}
         <ThemedView style={styles.heroSection}>
           <ThemedText type="displaySmall" style={styles.heroTitle}>
-            Welcome Brian!
+            Welcome to AhHere!
           </ThemedText>
           <HelloWave />
           <ThemedText type="bodyLarge" style={styles.heroSubtitle}>
-            Your Material 3 expressive app is ready to inspire
+            Your reporting journey begins here
+          </ThemedText>
+          <ThemedText type="bodyMedium" style={styles.heroDescription}>
+            Ready to start documenting and reporting? Let's get you set up with everything you need.
           </ThemedText>
         </ThemedView>
 
         {/* Action Buttons */}
         <ThemedView style={styles.buttonContainer}>
           <MaterialButton
-            title="Get Started"
+            title="Create Report"
             onPress={() => {}}
             variant="elevated"
             size="large"
             style={styles.primaryButton}
           />
           <MaterialButton
-            title="Learn More"
+            title="View Templates"
             onPress={() => {}}
             variant="outlined"
             size="medium"
@@ -52,41 +55,31 @@ export default function HomeScreen() {
         <ThemedView style={styles.cardsContainer}>
           <MaterialCard variant="elevated" surface="surfaceContainerHigh" style={styles.featureCard}>
             <ThemedText type="titleLarge" style={styles.cardTitle}>
-              Step 1: Try it
+              Quick Start Guide
             </ThemedText>
             <ThemedText type="bodyMedium" style={styles.cardContent}>
-              Edit <ThemedText type="titleMedium">app/(tabs)/index.tsx</ThemedText> to see changes.
-              Press{' '}
-              <ThemedText type="titleMedium">
-                {Platform.select({
-                  ios: 'cmd + d',
-                  android: 'cmd + m',
-                  web: 'F12',
-                })}
-              </ThemedText>{' '}
-              to open developer tools.
+              Learn how to create your first report with our step-by-step guide. 
+              Perfect for beginners and experienced users alike.
             </ThemedText>
           </MaterialCard>
 
           <MaterialCard variant="elevated" surface="surfaceContainer" style={styles.featureCard}>
             <ThemedText type="titleLarge" style={styles.cardTitle}>
-              Step 2: Explore
+              Report Templates
             </ThemedText>
             <ThemedText type="bodyMedium" style={styles.cardContent}>
-              Tap the Explore tab to learn more about what's included in this starter app.
+              Choose from a variety of pre-built templates to speed up your reporting process.
+              Customize them to fit your specific needs.
             </ThemedText>
           </MaterialCard>
 
           <MaterialCard variant="elevated" surface="surfaceContainerHigh" style={styles.featureCard}>
             <ThemedText type="titleLarge" style={styles.cardTitle}>
-              Step 3: Get a fresh start
+              Recent Reports
             </ThemedText>
             <ThemedText type="bodyMedium" style={styles.cardContent}>
-              When you're ready, run{' '}
-              <ThemedText type="titleMedium">npm run reset-project</ThemedText> to get a fresh{' '}
-              <ThemedText type="titleMedium">app</ThemedText> directory. This will move the current{' '}
-              <ThemedText type="titleMedium">app</ThemedText> to{' '}
-              <ThemedText type="titleMedium">app-example</ThemedText>.
+              Access your recently created reports and continue where you left off.
+              All your work is automatically saved and organized.
             </ThemedText>
           </MaterialCard>
         </ThemedView>
@@ -94,10 +87,10 @@ export default function HomeScreen() {
         {/* Material 3 Info */}
         <MaterialCard variant="filled" surface="primary" style={styles.materialInfoCard}>
           <ThemedText type="titleMedium" style={styles.materialInfoTitle}>
-            Material 3 Expressive
+            Material 3 Expressive Design
           </ThemedText>
           <ThemedText type="bodyMedium" style={styles.materialInfoContent}>
-            This app now uses Material 3 expressive design with vibrant colors, 
+            This app uses Material 3 expressive design with vibrant colors, 
             elevated surfaces, and expressive typography that creates emotional impact.
           </ThemedText>
         </MaterialCard>
@@ -125,6 +118,12 @@ const styles = StyleSheet.create({
     color: '#49454F', // Secondary text color
     maxWidth: 300,
   },
+  heroDescription: {
+    textAlign: 'center',
+    color: '#79747E', // Tertiary text color
+    maxWidth: 320,
+    lineHeight: 22,
+  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -133,10 +132,10 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   primaryButton: {
-    minWidth: 140,
+    minWidth: 160,
   },
   secondaryButton: {
-    minWidth: 140,
+    minWidth: 160,
   },
   cardsContainer: {
     gap: 16,
