@@ -82,53 +82,7 @@ export function GoogleMapsImage({
           <View style={styles.pinDot} />
           <View style={styles.pinTail} />
         </View>
-        
-        {/* Zoom level indicator */}
-        <View style={styles.zoomIndicator}>
-          <ThemedText type="bodySmall" style={styles.zoomText}>
-            Street Level View
-          </ThemedText>
-        </View>
 
-        {/* Map grid overlay for better map appearance */}
-        <View style={styles.mapGrid}>
-          <View style={[styles.gridLine, { top: '25%', left: 0, right: 0, height: 1 }]} />
-          <View style={[styles.gridLine, { top: '50%', left: 0, right: 0, height: 1 }]} />
-          <View style={[styles.gridLine, { top: '75%', left: 0, right: 0, height: 1 }]} />
-          <View style={[styles.gridLine, { left: '25%', top: 0, bottom: 0, width: 1 }]} />
-          <View style={[styles.gridLine, { left: '50%', top: 0, bottom: 0, width: 1 }]} />
-          <View style={[styles.gridLine, { left: '75%', top: 0, bottom: 0, width: 1 }]} />
-        </View>
-
-        {/* Compass indicator */}
-        <View style={styles.compass}>
-          <ThemedText type="bodySmall" style={styles.compassText}>
-            N
-          </ThemedText>
-        </View>
-
-        {/* Status indicators */}
-        <View style={styles.statusIndicator}>
-          <ThemedText type="bodySmall" style={styles.statusText}>
-            {hasApiKey ? '✅ API Key Loaded' : '❌ No API Key'}
-          </ThemedText>
-        </View>
-        
-        {/* Map source indicator */}
-        <View style={[styles.statusIndicator, { top: 60, left: 16 }]}>
-          <ThemedText type="bodySmall" style={styles.statusText}>
-            {useFallback ? '🗺️ Fallback Map' : '🌍 Google Maps'}
-          </ThemedText>
-        </View>
-        
-        {/* Error indicator */}
-        {imageError && (
-          <View style={[styles.statusIndicator, { top: 100, left: 16, backgroundColor: 'rgba(255, 0, 0, 0.8)' }]}>
-            <ThemedText type="bodySmall" style={[styles.statusText, { color: '#FFFFFF' }]}>
-              ⚠️ Map Load Error
-            </ThemedText>
-          </View>
-        )}
       </View>
       
       {/* Enhanced coordinates display */}
@@ -223,49 +177,7 @@ const styles = StyleSheet.create({
     marginTop: -2,
     alignSelf: 'center',
   },
-  zoomIndicator: {
-    position: 'absolute',
-    top: 16,
-    right: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-  },
-  zoomText: {
-    color: '#FFFFFF',
-    fontSize: 12,
-    fontWeight: '500',
-  },
-  mapGrid: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    opacity: 0.1,
-  },
-  gridLine: {
-    position: 'absolute',
-    backgroundColor: '#FFFFFF',
-    opacity: 0.3,
-  },
-  compass: {
-    position: 'absolute',
-    top: 16,
-    left: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  compassText: {
-    color: '#FFFFFF',
-    fontSize: 12,
-    fontWeight: '600',
-  },
+
   coordinatesContainer: {
     backgroundColor: '#F3EDF7',
     padding: 16,
@@ -305,20 +217,5 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#E7E0EC',
   },
-  statusIndicator: {
-    position: 'absolute',
-    top: 16,
-    left: 16,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: '#E7E0EC',
-  },
-  statusText: {
-    color: '#EA4335',
-    fontSize: 12,
-    fontWeight: '600',
-  },
+
 });
