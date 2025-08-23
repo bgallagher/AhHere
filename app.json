@@ -9,14 +9,25 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to camera to take photos of parking violations.",
+        "NSLocationWhenInUseUsageDescription": "This app needs access to location to record the exact location of parking violations.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photo library to select photos of parking violations."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#6750A4"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.READ_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -32,6 +43,19 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#6750A4"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow AhHere to access your photo library to select photos of parking violations.",
+          "cameraPermission": "Allow AhHere to access your camera to take photos of parking violations."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow AhHere to access your location to record the exact location of parking violations."
         }
       ]
     ],

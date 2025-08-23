@@ -36,6 +36,12 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+# SECRETS - Keep API keys secure
+config/secrets.ts
+config/secrets.js
+config/secrets.*.ts
+config/secrets.*.js
+
 app-example
 node_modules/
 .expo/

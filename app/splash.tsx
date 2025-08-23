@@ -50,7 +50,7 @@ export default function SplashScreen() {
         useNativeDriver: true,
       }),
     ]).start(() => {
-      router.replace('/(tabs)');
+      router.push('/report');
     });
   };
 
@@ -103,10 +103,10 @@ export default function SplashScreen() {
               AhHere
             </ThemedText>
             <ThemedText type="bodyLarge" style={styles.tagline}>
-              Your reporting companion
+              Parking Infringement Reporter
             </ThemedText>
             <ThemedText type="bodyMedium" style={styles.subtitle}>
-              Start documenting and reporting with ease
+              Report parking violations with photo evidence and precise location
             </ThemedText>
           </View>
         </Animated.View>
@@ -129,7 +129,7 @@ export default function SplashScreen() {
             style={styles.startButton}
           />
           <ThemedText type="bodySmall" style={styles.buttonHint}>
-            Tap to begin your reporting journey
+            Tap to begin reporting parking violations
           </ThemedText>
         </Animated.View>
       </LinearGradient>
